@@ -4,6 +4,9 @@ import ErrorPage from "./pages/ErrorPage"
 import Login from "./pages/Login"
 import Dashboard from "./pages/Dashboard"
 import EmployeeList from "./pages/EmployeeList"
+import Revenue from "./pages/Revenue"
+import VegItemsList from "./pages/VegItemsList"
+import NonVegItems from "./pages/NonVegItems"
 
 const router = createBrowserRouter([
     {
@@ -12,13 +15,24 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
             {
-                path: "dashboard",
                 index: true,
                 element: <Dashboard />
             },
             {
-                path: "employee/list",
+                path: "employeelist",
                 element: <EmployeeList />
+            },
+            {
+                path: "revenue",
+                element: <Revenue />
+            },
+            {
+                path: "vegmenu",
+                element: <VegItemsList />
+            },
+            {
+                path: "nonvegmenu",
+                element: <NonVegItems />
             }
         ]
     },
