@@ -11,3 +11,31 @@
   background-attachment: fixed;
   background-position: center;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.react-calendar {
+  width: 100% !important;
+  background: rgb(255, 255, 255) !important;
+  color: rgb(9, 9, 9) !important;
+}
+.react-calendar__tile--active {
+  background-color: orange !important;
+}
+.react-calendar__tile {
+  padding: 24px 6.66px !important;
+  font-size: 24px;
+}
+.react-calendar__navigation button {
+  font-size: 28px !important;
+}
+.react-calendar__month-view__days__day--weekend {
+  /* color: rgb(170, 78, 29) !important; */
+  background: rgb(234, 226, 226) !important;
+}

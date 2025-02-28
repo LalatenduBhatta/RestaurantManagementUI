@@ -1,10 +1,7 @@
 import { Link } from "react-router-dom"
 function Navbar() {
     return (
-        <div className="navbar bg-slate-50 font-semibold sticky top-0 z-50 shadow-sm">
-            <div className="navbar-start">
-                <a className="btn btn-ghost text-xl">My Hotel</a>
-            </div>
+        <div className="navbar bg-slate-50 font-semibold sticky top-0 z-20 shadow-sm flex justify-end">
             <div className="navbar-end">
                 <button className="btn btn-ghost btn-circle">
                     <svg

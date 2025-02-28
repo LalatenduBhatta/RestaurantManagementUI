@@ -27,11 +27,14 @@ const Sidebar = () => {
 
             <aside
                 id="sidebar-multi-level-sidebar"
-                class="-z-10 w-full h-[90vh] transition-transform -translate-x-full sm:translate-x-0"
+                class="-z-10 w-full h-full transition-transform -translate-x-full sm:translate-x-0"
                 aria-label="Sidebar"
             >
-                <div class="h-full px-12 py-8 overflow-y-auto bg-gray-200 dark:bg-gray-800 ">
-                    <ul class="space-y-2 font-medium flex flex-col gap-4">
+                <div class="h-full overflow-y-auto bg-gray-200 dark:bg-gray-800 ">
+                    <div className="p-2 text-center">
+                        <a className="btn btn-ghost text-2xl text-blue-800 uppercase font-bold">My Hotel</a>
+                    </div>
+                    <ul class="space-y-2 font-medium flex flex-col gap-4 py-8 px-8">
                         <li className="border-b border-gray-400">
                             <a
                                 href="#"
