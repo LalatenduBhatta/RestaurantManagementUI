@@ -24,9 +24,10 @@
   width: 100% !important;
   background: rgb(255, 255, 255) !important;
   color: rgb(9, 9, 9) !important;
-}
-.react-calendar__tile--active {
-  background-color: orange !important;
+  border: none !important;
+  box-shadow: 0 0 2px rgb(108, 102, 102);
+  padding: 0 !important;
+  border-radius: 10px;
 }
 .react-calendar__tile {
   padding: 24px 6.66px !important;
@@ -38,4 +39,7 @@
 .react-calendar__month-view__days__day--weekend {
   /* color: rgb(170, 78, 29) !important; */
   background: rgb(234, 226, 226) !important;
+}
+.react-calendar__tile--active {
+  background-color: orange !important;
 }
