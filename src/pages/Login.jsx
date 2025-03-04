@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 //demo userInfo
 const user = { email: "a@gmail.com", password: "1234" };
+
 function Login() {
     const [loginData, setLoginData] = useState({
         email: "",
