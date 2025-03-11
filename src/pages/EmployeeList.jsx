@@ -1,8 +1,15 @@
 import { FaPlus } from "react-icons/fa";
 import AddEmployee from "../components/AddEmployee";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import employees from "../libs/Employees"; //stock data(static)
 function EmployeeList() {
     const [isModal, setIsModal] = useState(false)
+    const navigate = useNavigate()
+    function showDetails(empId) {
+        //navigate to employee details page
+        navigate(`/employee/${empId}`)
+    }
     return (
         <div className="overflow-x-auto">
             {isModal && <AddEmployee />}
@@ -25,40 +32,38 @@ function EmployeeList() {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* row 1 */}
-                    <tr>
+                    {
+                        employees.map(ele => {
+                            return (
+                                <tr>
+                                    <td>
+                                        <div className="flex items-center gap-3">
+                                            <div className="avatar">
+                                                <div className="mask mask-squircle h-12 w-12">
+                                                    <img
+                                                        src="https://img.daisyui.com/images/profile/demo/2@94.webp"
+                                                        alt="Avatar" />
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div className="font-bold">{ele.firstName + " " + ele.lastName}</div>
+                                                <div className="text-sm opacity-50">{ele.city}</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>{ele.department}</td>
+                                    <td>{ele.employeeId}</td>
+                                    <td>{ele.dateOfHire}</td>
+                                    <td>{ele.salary} ₹</td>
+                                    <th>
+                                        <button className="btn btn-ghost btn-xs"
+                                            onClick={() => showDetails(ele.employeeId)}>details</button>
+                                    </th>
+                                </tr>
+                            )
+                        })
+                    }
 
-                        <td>
-                            <div className="flex items-center gap-3">
-                                <div className="avatar">
-                                    <div className="mask mask-squircle h-12 w-12">
-                                        <img
-                                            src="https://img.daisyui.com/images/profile/demo/2@94.webp"
-                                            alt="Avatar" />
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="font-bold">Virat Kohli</div>
-                                    <div className="text-sm opacity-50">Delhi</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            Cooking Staff
-                        </td>
-                        <td>
-                            MR01
-                        </td>
-                        <td>
-                            10/06/2024
-                        </td>
-                        <td>
-                            25000 ₹
-                        </td>
-                        <th>
-                            <button className="btn btn-ghost btn-xs">details</button>
-                        </th>
-                    </tr>
                 </tbody>
             </table>
         </div>
