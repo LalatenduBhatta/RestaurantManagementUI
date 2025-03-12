@@ -56,7 +56,7 @@ function EmployeeList() {
                                     <td>{ele.dateOfHire}</td>
                                     <td>{ele.salary} ₹</td>
                                     <th>
-                                        <button className="btn btn-ghost btn-xs"
+                                        <button className="btn btn-ghost btn-sm bg-green-400"
                                             onClick={() => showDetails(ele.employeeId)}>details</button>
                                     </th>
                                 </tr>
